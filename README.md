@@ -1,2 +1,4 @@
 # LudumDare46
-Theme od the jam: Keep it alive
+Theme of the jam: Keep it alive
+
+Description: In this game you'll play the sun and the moon. Your goal as the sun is to keep the contries warm. And as the moon, you have to protect the earth from the asteroid coming from space. Your goal is to survive (TBD) minutes.
