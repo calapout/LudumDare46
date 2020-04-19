@@ -14,8 +14,10 @@ public class PauseController : MonoBehaviour
             if (menuOpened == false)
             {
                 mainMenu.SetActive(false);
+                Time.timeScale = 1;
             }
             else {
+                Time.timeScale = 0;
                 mainMenu.SetActive(true);
                 mainMenu.GetComponent<MainMenuController>().HideOptionsView();
             }

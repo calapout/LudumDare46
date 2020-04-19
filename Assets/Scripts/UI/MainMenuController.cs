@@ -11,6 +11,12 @@ public class MainMenuController : MonoBehaviour
 
     public GameObject playBtn;
     public GameObject pauseController;
+    public GameObject pauseMenuHint;
+
+    private void Awake()
+    {
+        Time.timeScale = 0;
+    }
 
     public void ChangeAll(bool v) {
         mainMenu.gameObject.SetActive(v);
@@ -31,6 +37,8 @@ public class MainMenuController : MonoBehaviour
         ChangeAll(false);
         this.gameObject.SetActive(false);
         this.pauseController.SetActive(true);
+        this.pauseMenuHint.SetActive(true);
+        Time.timeScale = 1;
     }
     public void QuitGame() {
         Application.Quit();
