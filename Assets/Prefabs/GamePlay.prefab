@@ -41,6 +41,131 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2905364671083939197}
     m_Modifications:
+    - target: {fileID: 520902417199080530, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417199080530, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetState
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417199080530, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417199080530, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417199080541, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.2492
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417199080541, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417199080541, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417199080541, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417341803337, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9056
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417341803337, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417341803337, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417341803337, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417341803342, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417341803342, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetState
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417341803342, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417341803342, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311273, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311273, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetState
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311273, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311273, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311274, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.17177
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311274, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.6768
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311274, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311274, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417652311274, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0774
+      objectReference: {fileID: 0}
     - target: {fileID: 520902417738457464, guid: 023dce4574724d841827820b4a9b559a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -101,6 +226,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cadrans
       objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207633, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207633, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetState
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207633, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207633, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207644, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.17177
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207644, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.4781
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207644, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207644, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 520902417866207644, guid: 023dce4574724d841827820b4a9b559a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0774
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 023dce4574724d841827820b4a9b559a, type: 3}
 --- !u!4 &5575191313360011611 stripped
@@ -116,6 +286,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2905364671083939197}
     m_Modifications:
+    - target: {fileID: 3107653463052635572, guid: ab14fc2f67e2ad64293f5e26649b3b00,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f26ee17da27e2a04f9f4dc5cc9e5e1e5,
+        type: 3}
+    - target: {fileID: 3107653463052635573, guid: ab14fc2f67e2ad64293f5e26649b3b00,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9786
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107653463052635573, guid: ab14fc2f67e2ad64293f5e26649b3b00,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.1478
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107653463052635575, guid: ab14fc2f67e2ad64293f5e26649b3b00,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107653463052635575, guid: ab14fc2f67e2ad64293f5e26649b3b00,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.28
+      objectReference: {fileID: 0}
     - target: {fileID: 3107653464877132094, guid: ab14fc2f67e2ad64293f5e26649b3b00,
         type: 3}
       propertyPath: m_Name
@@ -245,6 +441,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029225374921369241, guid: b6b68909660c61a4496c3198e2d8dd03,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.66634
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029225374921369241, guid: b6b68909660c61a4496c3198e2d8dd03,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.66634
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029225374921369241, guid: b6b68909660c61a4496c3198e2d8dd03,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.66634
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029225374921369242, guid: b6b68909660c61a4496c3198e2d8dd03,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029225374921369242, guid: b6b68909660c61a4496c3198e2d8dd03,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.07363987
       objectReference: {fileID: 0}
     - target: {fileID: 3029225374921369243, guid: b6b68909660c61a4496c3198e2d8dd03,
         type: 3}
