@@ -25,14 +25,11 @@ public class Cadran : MonoBehaviour
         actualizeCadranEvent = new actualizeCadran();
     }
 
-    private void Update ( )
+    private void Update ()
     {
-        if ( !needSun )
-        {
-            return;
-        }
 
         if (gameOverTimer.GetTimeLeft() <= unhappyTime && !didThrowUnhappy ) {
+            didThrowUnhappy = true;
             currentStatus = 1;
             actualizeCadranEvent.Invoke ( id, currentStatus, isSunOver );
         }
@@ -40,6 +37,7 @@ public class Cadran : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D sun) {
         if ( sun.tag == "sun" ){
+            gameOverTimer.Pause();
             isSunOver = true;
             actualizeCadranEvent.Invoke ( id, currentStatus, isSunOver );
             timerSunLeftToReceive.Resume ( );
@@ -47,22 +45,36 @@ public class Cadran : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D sun) {
+
         if ( sun.tag == "sun" ){
             isSunOver = false;
             actualizeCadranEvent.Invoke ( id, currentStatus, isSunOver );
-            timerSunLeftToReceive.Pause ( );
+            timerSunLeftToReceive.Pause ();
+            if ( needSun ){
+                gameOverTimer.Resume ();
+            }
         }
-
     }
 
     public void NeedSun ()
     {
+        didThrowUnhappy = false;
         needSun = true;
         currentStatus = 2;
         actualizeCadranEvent.Invoke ( id, currentStatus, isSunOver );
         gameOverTimer.SetNewTime(GameManager.Instance.initialDelay);
-        unhappyTime = ( GameManager.Instance.initialDelay * 0.75f > 4f ) ? GameManager.Instance.initialDelay * 0.75f : 4f;
+        gameOverTimer.Resume();
+        unhappyTime = ( GameManager.Instance.initialDelay * 0.40f > 4f ) ? GameManager.Instance.initialDelay * 0.40f : 4f;
         timerSunLeftToReceive.SetNewTime ( 3 );
+    }
+
+    public void EnoughSun ()
+    {
+        needSun = false;
+        currentStatus = 1;
+        actualizeCadranEvent.Invoke (id, currentStatus, isSunOver);
+        gameOverTimer.Pause();
+        GameManager.Instance.NewCadran ();
     }
 }
 

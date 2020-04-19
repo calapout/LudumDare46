@@ -15,14 +15,14 @@ namespace UnityEngine {
 
         private void Start ( )
         {
-            this.timeLeft = initialTime;
+            SetNewTime (initialTime);
         }
 
         void Update ( )
         {
-            Debug.Log( isActive );
-            Debug.Log(timeLeft);
-            if ( isActive && timeLeft >= 0 )
+            if ( !isActive ) return;
+
+            if ( timeLeft >= 0 )
             {
                 timeLeft -= Time.deltaTime;
                 return;
@@ -30,6 +30,7 @@ namespace UnityEngine {
             if ( !didThrowEvent )
             {
                 timeOut.Invoke ( );
+                didThrowEvent = true;
                 return;
             }
         }
