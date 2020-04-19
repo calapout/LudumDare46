@@ -22,7 +22,7 @@ public class Cadran : MonoBehaviour
     private void Start ()
     {
         GameManager.Instance.RegisterCadran ( id, this );
-        actualizeCadranEvent = new actualizeCadran();
+        //actualizeCadranEvent = new actualizeCadran();
     }
 
     private void Update ()

@@ -10,9 +10,9 @@ public class Earth : MonoBehaviour
     private void Awake()
     {
         CloseAll();
-        SetState(1, 1, true);
+        //SetState(1, 1, true);
 
-        StartCoroutine(wait());
+        //StartCoroutine(wait());
     }
     private void CloseAll() {
         foreach (EarthPopup p in earthPopups)
@@ -38,9 +38,9 @@ public class Earth : MonoBehaviour
         }
     }
 
-    IEnumerator wait() {
+    /*IEnumerator wait() {
         yield return new WaitForSecondsRealtime(5f);
         SetState(1, -1, false);
         SetState(0, 2, true);
-    }
+    }*/
 }
