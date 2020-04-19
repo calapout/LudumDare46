@@ -8,8 +8,7 @@ public class Cadran : MonoBehaviour
     [SerializeField]
     private int _id;
     public int id { get { return _id; } set { _id = id; } }
-    private int currentStatus { get; set; } = -1;
-    private bool needSun { get; set; } = false;
+    private bool isNeedingSun { get; set; } = false;
     private bool isSunOver { get; set; } = false;
     private bool didThrowUnhappy = false;
 
@@ -22,24 +21,28 @@ public class Cadran : MonoBehaviour
     private void Start ()
     {
         GameManager.Instance.RegisterCadran ( id, this );
-        //actualizeCadranEvent = new actualizeCadran();
     }
 
     private void Update ()
     {
+        if ( !isNeedingSun ) {
+            return;
+        }
 
         if (gameOverTimer.GetTimeLeft() <= unhappyTime && !didThrowUnhappy ) {
             didThrowUnhappy = true;
-            currentStatus = 1;
-            actualizeCadranEvent.Invoke ( id, currentStatus, isSunOver );
+            ThrowEvent ( 1, isSunOver );
         }
     }
 
     private void OnTriggerEnter2D(Collider2D sun) {
-        if ( sun.tag == "sun" ){
-            gameOverTimer.Pause();
+        if ( sun.tag == "sun"  ){
             isSunOver = true;
-            actualizeCadranEvent.Invoke ( id, currentStatus, isSunOver );
+            ThrowEvent (-2, isSunOver);
+
+            if ( !isNeedingSun ) return;
+
+            gameOverTimer.Pause();
             timerSunLeftToReceive.Resume ( );
         }
     }
@@ -48,20 +51,20 @@ public class Cadran : MonoBehaviour
 
         if ( sun.tag == "sun" ){
             isSunOver = false;
-            actualizeCadranEvent.Invoke ( id, currentStatus, isSunOver );
+            ThrowEvent (-2, isSunOver);
+
+            if ( !isNeedingSun ) return;
+
             timerSunLeftToReceive.Pause ();
-            if ( needSun ){
-                gameOverTimer.Resume ();
-            }
+            gameOverTimer.Resume ();
         }
     }
 
     public void NeedSun ()
     {
         didThrowUnhappy = false;
-        needSun = true;
-        currentStatus = 2;
-        actualizeCadranEvent.Invoke ( id, currentStatus, isSunOver );
+        isNeedingSun = true;
+        ThrowEvent (2, isSunOver);
         gameOverTimer.SetNewTime(GameManager.Instance.initialDelay);
         gameOverTimer.Resume();
         unhappyTime = ( GameManager.Instance.initialDelay * 0.40f > 4f ) ? GameManager.Instance.initialDelay * 0.40f : 4f;
@@ -70,11 +73,16 @@ public class Cadran : MonoBehaviour
 
     public void EnoughSun ()
     {
-        needSun = false;
-        currentStatus = 1;
-        actualizeCadranEvent.Invoke (id, currentStatus, isSunOver);
-        gameOverTimer.Pause();
+        isNeedingSun = false;
+        ThrowEvent (0, isSunOver);
+        gameOverTimer.Pause ();
+        timerSunLeftToReceive.Pause ();
         GameManager.Instance.NewCadran ();
+    }
+
+    public void ThrowEvent (int currentStatus, bool isSunOver)
+    {
+        actualizeCadranEvent.Invoke (id, currentStatus, isSunOver);
     }
 }
 
@@ -82,7 +90,7 @@ public class Cadran : MonoBehaviour
 
 /// <summary>
 /// t1: cadran
-/// t2: status (-1 = nothing, 0 = happy, 1=unhappy, 2=needSun)
+/// t2: status (-2 = nothing, -1 = closeBubble, 0 = happy, 1=unhappy, 2=needSun)
 /// t3: isSunThere
 /// </summary>
 [System.Serializable]
