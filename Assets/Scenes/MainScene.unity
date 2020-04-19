@@ -3789,7 +3789,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: I'll save you earth chan!
+  m_Text: I'll save you earth-chan!
 --- !u!222 &1531584287
 CanvasRenderer:
   m_ObjectHideFlags: 0
