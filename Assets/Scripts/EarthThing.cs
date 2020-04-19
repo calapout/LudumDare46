@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EarthThing : MonoBehaviour
 {
-    public void Show()
+    public virtual void Show()
     {
         SpriteRenderer[] renderers = transform.GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer sp in renderers)
@@ -12,7 +12,7 @@ public class EarthThing : MonoBehaviour
             sp.enabled = true;
         }
     }
-    public void Hide()
+    public virtual void Hide()
     {
         SpriteRenderer[] renderers = transform.GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer sp in renderers)

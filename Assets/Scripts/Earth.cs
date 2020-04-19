@@ -11,11 +11,13 @@ public class Earth : MonoBehaviour
     {
         CloseAll();
         SetState(1, 1, true);
+
+        StartCoroutine(wait());
     }
     private void CloseAll() {
         foreach (EarthPopup p in earthPopups)
         {
-            p.Hide();
+            p.Hide(false);
         }
         foreach (EarthZone z in earthZones)
         {
@@ -24,14 +26,21 @@ public class Earth : MonoBehaviour
     }
     public void SetState(int zoneNumber, int state, bool hasLight)
     {
-        if (state == -1 || zoneNumber == -1)
+        if (state == -1)
         {
-            CloseAll();
+            earthPopups[zoneNumber].Hide(true);
+            earthZones[zoneNumber].Hide();
         }
         else
         {
             earthPopups[zoneNumber].Show(stateSprites[state]);
             earthZones[zoneNumber].Show(hasLight);
         }
+    }
+
+    IEnumerator wait() {
+        yield return new WaitForSecondsRealtime(5f);
+        SetState(1, -1, false);
+        SetState(0, 2, true);
     }
 }
