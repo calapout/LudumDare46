@@ -9,7 +9,7 @@ public class EarthZone : EarthThing
     {
         if (sp == null) { sp = GetComponent<SpriteRenderer>(); }
 
-        Color newCol = (hasLight) ? Color.white : Color.yellow;
+        Color newCol = (!hasLight) ? Color.white : Color.yellow;
         newCol.a = 0.5f;
         sp.color = newCol;
         Show();
