@@ -1945,6 +1945,11 @@ PrefabInstance:
       propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2028310891}
+    - target: {fileID: 5575191313372463389, guid: e4bb34511e84ff546837e0326bd91a70,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7192345294249862208, guid: e4bb34511e84ff546837e0326bd91a70,
         type: 3}
       propertyPath: m_Name
