@@ -13,6 +13,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject pauseController;
     public GameObject pauseMenuHint;
 
+    public TutorialsManager tutos;
+
     private void Awake()
     {
         Time.timeScale = 0;
@@ -39,6 +41,8 @@ public class MainMenuController : MonoBehaviour
         this.pauseController.SetActive(true);
         this.pauseMenuHint.SetActive(true);
         Time.timeScale = 1;
+
+        tutos.PlaySunChanAnim();
     }
     public void QuitGame() {
         Application.Quit();

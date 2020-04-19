@@ -1089,7 +1089,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press Left or Right arrow
+  m_Text: Press A or D
 --- !u!222 &389469181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1154,6 +1154,7 @@ MonoBehaviour:
   playBtn: {fileID: 1894817692}
   pauseController: {fileID: 1432284703}
   pauseMenuHint: {fileID: 160720914}
+  tutos: {fileID: 1256417778}
 --- !u!1 &445400912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,6 +2781,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5575191311431772088, guid: e4bb34511e84ff546837e0326bd91a70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5575191312696036205, guid: e4bb34511e84ff546837e0326bd91a70,
         type: 3}
       propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3729,7 +3735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press A or D
+  m_Text: 'Press Left or Right arrow '
 --- !u!222 &1276791466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4599,7 +4605,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5980,7 +5986,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 137.82
   m_PointLightOuterAngle: 149.56
   m_PointLightInnerRadius: 4.223435
-  m_PointLightOuterRadius: 4.7088146
+  m_PointLightOuterRadius: 4.4293566
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -6000,7 +6006,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822332776}
-  m_LocalRotation: {x: -0, y: -0, z: 0.9204791, w: 0.39079177}
+  m_LocalRotation: {x: -0, y: -0, z: 0.923639, w: 0.38326362}
   m_LocalPosition: {x: 0.42199993, y: 0.57299995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

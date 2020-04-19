@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
+    public float timeToCompleteSunZone = 0.1f;
+
     [SerializeField]
     public Dictionary<int, Cadran> cadranList { get; } = new Dictionary<int, Cadran> ( );
     private List<int> indexPool = new List<int>();
@@ -69,7 +71,7 @@ public class GameManager : Singleton<GameManager>
 
     IEnumerator NewCadranIenumerator ()
     {
-        yield return new WaitForSecondsRealtime (3);
+        yield return new WaitForSecondsRealtime (3f);
         Instance.ChooseNextCadran ();
     }
 }

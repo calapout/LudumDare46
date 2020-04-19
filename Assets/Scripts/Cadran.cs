@@ -68,7 +68,7 @@ public class Cadran : MonoBehaviour
         gameOverTimer.SetNewTime(GameManager.Instance.initialDelay);
         gameOverTimer.Resume();
         unhappyTime = ( GameManager.Instance.initialDelay * 0.40f > 4f ) ? GameManager.Instance.initialDelay * 0.40f : 4f;
-        timerSunLeftToReceive.SetNewTime ( 3 );
+        timerSunLeftToReceive.SetNewTime ( GameManager.Instance.timeToCompleteSunZone );
     }
 
     public void EnoughSun ()
