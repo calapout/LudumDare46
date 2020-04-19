@@ -21,12 +21,16 @@ public class Earth : MonoBehaviour
         }
         foreach (EarthZone z in earthZones)
         {
-            z.Hide();
+            //z.Hide();
         }
     }
     public void SetState(int zoneNumber, int state, bool hasLight)
     {
-        if (state == -1)
+        if (state == -2)
+        {
+            earthZones[zoneNumber].Show(hasLight);
+        }
+        else if (state == -1)
         {
             earthPopups[zoneNumber].Hide(true);
             earthZones[zoneNumber].Hide();
@@ -35,6 +39,12 @@ public class Earth : MonoBehaviour
         {
             earthPopups[zoneNumber].Show(stateSprites[state]);
             earthZones[zoneNumber].Show(hasLight);
+            if (state == 1)
+            {
+                earthZones[zoneNumber].SetDanger();
+            }
+
+            SoundManager.PlaySound(state + 1);
         }
     }
 

@@ -13,10 +13,10 @@ public class OptionsController : MonoBehaviour
     private void Awake()
     {
         sliderSound.onValueChanged.AddListener((v)=> {
-            soundSource.volume = v;
+            musicSource.volume = v / 13f;
         });
         sliderMusic.onValueChanged.AddListener((v) => {
-            musicSource.volume = v;
+            SoundManager.soundVolume = v / 10f;
         });
     }
 }
