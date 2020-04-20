@@ -9,7 +9,9 @@ namespace UnityEngine {
         public float initialTime;
         [SerializeField]
         private float timeLeft;
+        [SerializeField]
         private bool isActive = false;
+        [SerializeField]
         private bool didThrowEvent = false;
         public UnityEvent timeOut;
 
@@ -29,8 +31,9 @@ namespace UnityEngine {
             }
             if ( !didThrowEvent )
             {
-                timeOut.Invoke ( );
+                Pause ();
                 didThrowEvent = true;
+                timeOut.Invoke ( );
                 return;
             }
         }
