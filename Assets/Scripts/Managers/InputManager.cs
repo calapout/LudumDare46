@@ -52,7 +52,7 @@ public class InputManager : Singleton<InputManager>
 
     private void MoveMoon (float direction)
     {
-        moon.transform.Rotate (new Vector3 (0, 0, direction * 1.75f));
+        moon.transform.Rotate (new Vector3 (0, 0, direction * 1.05f));
     }
 
     private void RotatePlanets ()
