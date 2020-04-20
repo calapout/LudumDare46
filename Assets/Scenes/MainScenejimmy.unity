@@ -1913,9 +1913,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTime: 0
   timeLeft: 0
+  isActive: 0
+  didThrowEvent: 0
   timeOut:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 822356587}
+        m_MethodName: InstantiateComet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &822356587 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5575191313292425200, guid: e4bb34511e84ff546837e0326bd91a70,
+    type: 3}
+  m_PrefabInstance: {fileID: 879205635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822356582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4563ca487b567ed4588320cec3746619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &879205635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2014,6 +2039,16 @@ PrefabInstance:
       propertyPath: earth
       value: 
       objectReference: {fileID: 1180129023}
+    - target: {fileID: 5575191313292425200, guid: e4bb34511e84ff546837e0326bd91a70,
+        type: 3}
+      propertyPath: initialCometCooldown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575191313292425200, guid: e4bb34511e84ff546837e0326bd91a70,
+        type: 3}
+      propertyPath: minCometCooldown
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5575191313292425203, guid: e4bb34511e84ff546837e0326bd91a70,
         type: 3}
       propertyPath: sun
