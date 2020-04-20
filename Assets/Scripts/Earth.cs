@@ -43,7 +43,10 @@ public class Earth : MonoBehaviour
             {
                 earthZones[zoneNumber].SetDanger();
             }
-
+            else if(state == 2)
+            {
+                earthZones[zoneNumber].SetDanger();
+            }
             SoundManager.PlaySound(state + 1);
         }
     }
