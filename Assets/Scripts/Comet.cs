@@ -21,7 +21,7 @@ public class Comet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards (transform.position, earth.transform.position, Time.deltaTime * 1f);
+        transform.position = Vector3.MoveTowards (transform.position, earth.transform.position, Time.deltaTime * 0.5f);
         transform.rotation = GetCometAngle (gameObject, earth);
 
     }
@@ -44,7 +44,7 @@ public class Comet : MonoBehaviour
         Debug.Log (collision.tag);
         if ( collision.tag == "earth" )
         {
-
+            GameManager.Instance.Gameover ();
         }
 
         if ( collision.tag == "earth" || collision.tag == "moon" || collision.tag == "sun" )

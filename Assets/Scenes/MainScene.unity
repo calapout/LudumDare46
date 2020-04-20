@@ -1033,6 +1033,54 @@ MonoBehaviour:
   pauseController: {fileID: 1432284703}
   pauseMenuHint: {fileID: 160720914}
   tutos: {fileID: 1256417778}
+--- !u!1 &406808731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5575191313292425215, guid: e4bb34511e84ff546837e0326bd91a70,
+    type: 3}
+  m_PrefabInstance: {fileID: 879205635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &406808736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5575191313292425200, guid: e4bb34511e84ff546837e0326bd91a70,
+    type: 3}
+  m_PrefabInstance: {fileID: 879205635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406808731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4563ca487b567ed4588320cec3746619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &406808737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406808731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee40ba876da44c4085e6d1dc5bb5f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialTime: 45
+  timeLeft: 0
+  isActive: 0
+  didThrowEvent: 0
+  timeOut:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 406808736}
+        m_MethodName: EnableComet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &451561835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2597,6 +2645,11 @@ PrefabInstance:
       propertyPath: actualizeCadranEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2028310891}
+    - target: {fileID: 5575191313292425200, guid: e4bb34511e84ff546837e0326bd91a70,
+        type: 3}
+      propertyPath: moonChanTimer
+      value: 
+      objectReference: {fileID: 406808737}
     - target: {fileID: 7192345294249862208, guid: e4bb34511e84ff546837e0326bd91a70,
         type: 3}
       propertyPath: m_Name
