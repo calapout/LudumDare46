@@ -62,6 +62,12 @@ public class Cadran : MonoBehaviour
 
     public void NeedSun ()
     {
+        if ( isSunOver )
+        {
+            EnoughSun ();
+            return;
+        }
+
         didThrowUnhappy = false;
         isNeedingSun = true;
         ThrowEvent (2, isSunOver);
