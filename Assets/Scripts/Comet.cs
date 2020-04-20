@@ -42,13 +42,17 @@ public class Comet : MonoBehaviour
     private void OnTriggerEnter2D (Collider2D collision)
     {
         Debug.Log (collision.tag);
-        if ( collision.tag == "earth" )
-        {
-            GameManager.Instance.Gameover ();
-        }
 
         if ( collision.tag == "earth" || collision.tag == "moon" || collision.tag == "sun" )
         {
+            SoundManager.PlaySound(6);
+
+            if (collision.tag == "earth")
+            {
+                Explosion.inst.AnimExplosionEnd(this.transform.position);
+            }
+            else { Explosion.inst.AnimExplosion(this.transform.position); }
+
             Destroy (gameObject);
         }
 

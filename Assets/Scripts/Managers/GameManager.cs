@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using Bytes;
+
 public class GameManager : Singleton<GameManager>
 {
     public float timeToCompleteSunZone = 0.1f;
@@ -20,12 +22,6 @@ public class GameManager : Singleton<GameManager>
     public GameObject earth;
     public Timer moonChanTimer;
     public GameObject warningSign;
-
-    // Start is called before the first frame update
-    void Start ()
-    {
-        Instance.StartGame ();
-    }
 
     public void RegisterCadran ( int id, Cadran cadran )
     {
@@ -138,6 +134,6 @@ public class GameManager : Singleton<GameManager>
     IEnumerator MoonChanApparition ()
     {
         yield return new WaitForSecondsRealtime (6f);
-        GameManager.Instance.PauseGame ();
+        //GameManager.Instance.PauseGame ();
     }
 }
