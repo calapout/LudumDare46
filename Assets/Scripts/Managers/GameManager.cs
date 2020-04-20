@@ -18,16 +18,12 @@ public class GameManager : Singleton<GameManager>
     public Timer cometTimer;
     public GameObject cometPrefab;
     public GameObject earth;
+    public Timer moonChanTimer;
 
     // Start is called before the first frame update
     void Start ()
     {
         Instance.StartGame ();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public void RegisterCadran ( int id, Cadran cadran )
@@ -88,18 +84,20 @@ public class GameManager : Singleton<GameManager>
     public void EnableComet ()
     {
         Instance.InstantiateComet ();
+        InputManager.Instance.EnableMoon ();
+        //StartCoroutine ("MoonChanApparition");
     }
 
     public void StartGame ()
     {
         Instance.gameTimer.Resume ();
         Instance.NewCadran ();
-        Instance.EnableComet ();
+        Instance.moonChanTimer.Resume ();
     }
 
     public void Gameover ()
     {
-        SceneManager.LoadScene("gameOver");
+        SceneManager.LoadScene(0);
     }
 
     public void Win()
@@ -127,5 +125,11 @@ public class GameManager : Singleton<GameManager>
     {
         yield return new WaitForSecondsRealtime (0.5f);
         Instance.cometTimer.Resume ();
+    }
+
+    IEnumerator MoonChanApparition ()
+    {
+        yield return new WaitForSecondsRealtime (3f);
+        GameManager.Instance.PauseGame ();
     }
 }

@@ -16,12 +16,12 @@ public class InputManager : Singleton<InputManager>
     void Start()
     {
         Instance.EnableSun ();
-        Instance.EnableMoon ();
     }
 
     // Update is called once per frame
     void Update()
     {
+        RotatePlanets ();
     }
 
     private void FixedUpdate ()
@@ -52,6 +52,12 @@ public class InputManager : Singleton<InputManager>
 
     private void MoveMoon (float direction)
     {
-        moon.transform.Rotate (new Vector3 (0, 0, direction * 1.5f));
+        moon.transform.Rotate (new Vector3 (0, 0, direction * 1.75f));
+    }
+
+    private void RotatePlanets ()
+    {
+        sun.transform.Rotate (new Vector3 (0, 0, -Time.deltaTime));
+        moon.transform.Rotate (new Vector3 (0, 0, -Time.deltaTime));
     }
 }
