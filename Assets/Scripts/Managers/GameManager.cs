@@ -10,13 +10,17 @@ public class GameManager : Singleton<GameManager>
     private List<int> indexPool = new List<int>();
     private int indexReference = -1;
     public float initialDelay = 15;
+    public float initialCometCooldown = 0;
+    public float minCometCooldown = 0;
     public Timer gameTimer;
+    public Timer cometTimer;
+    public GameObject cometPrefab;
+    public GameObject earth;
 
     // Start is called before the first frame update
     void Start ()
     {
-        Instance.gameTimer.Resume();
-        Instance.NewCadran ();
+        Instance.StartGame ();
     }
 
     // Update is called once per frame
@@ -39,6 +43,7 @@ public class GameManager : Singleton<GameManager>
     private void ChooseNextCadran ()
     {
         int index = Random.Range ( 0, Instance.indexPool.Count );
+        if ( indexReference == -1 ) index = 3;
         setNewReference ( index );
         Cadran cadran = Instance.cadranList[Instance.indexReference];
         Instance.initialDelay *= 0.95f;
@@ -52,9 +57,52 @@ public class GameManager : Singleton<GameManager>
         Instance.indexPool.RemoveAt ( index );
     }
 
+    public void InstantiateComet ()
+    {
+        float radius = 10;
+        Vector3 postion = Instance.RandomPointOnCircleEdge (radius);
+        GameObject comet = Instantiate (cometPrefab);
+        comet.transform.position += postion;
+
+        comet.GetComponent<Rigidbody2D> ().AddForce(new Vector2(-5f, 0f));
+        comet.GetComponent<Comet>().setEarth (Instance.earth);
+        comet.SetActive (true);
+
+        float newTime = Mathf.Clamp (initialCometCooldown * 0.95f, Instance.minCometCooldown, initialCometCooldown);
+        Instance.cometTimer.SetNewTime (newTime);
+        StartCoroutine ("ResumeComet");
+    }
+
+    private Vector3 RandomPointOnCircleEdge (float radius)
+    {
+        float angle = Random.Range (0, 360f);
+
+        float x = Instance.earth.transform.position.x + radius * Mathf.Cos (angle * ( Mathf.PI / 180 ));
+        float y = Instance.earth.transform.position.y + radius * Mathf.Sin (angle * ( Mathf.PI / 180 ));
+
+        return new Vector3 (x, y, 0);
+    }
+
+    public void EnableComet ()
+    {
+        Instance.InstantiateComet ();
+    }
+
+    public void StartGame ()
+    {
+        Instance.gameTimer.Resume ();
+        Instance.NewCadran ();
+        Instance.EnableComet ();
+    }
+
     public void Gameover ()
     {
         SceneManager.LoadScene("gameOver");
+    }
+
+    public void Win()
+    {
+        SceneManager.LoadScene ("win");
     }
 
     public void PauseGame ()
@@ -71,5 +119,11 @@ public class GameManager : Singleton<GameManager>
     {
         yield return new WaitForSecondsRealtime (3);
         Instance.ChooseNextCadran ();
+    }
+
+    IEnumerator ResumeComet ()
+    {
+        yield return new WaitForSecondsRealtime (0.5f);
+        Instance.cometTimer.Resume ();
     }
 }

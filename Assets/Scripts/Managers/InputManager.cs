@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class InputManager : Singleton<InputManager>
 {
-    GameObject sun;
-    Rigidbody2D moonRB;
+    public GameObject sun;
+    public GameObject moon;
     delegate void Move (float direction);
 
     private Dictionary<string, Move> functionByAxis { get; set; } = new Dictionary<string, Move> ();
@@ -15,9 +15,8 @@ public class InputManager : Singleton<InputManager>
     // Start is called before the first frame update
     void Start()
     {
-        sun = GameObject.FindGameObjectWithTag ("sun");
-        //moonRB = GameObject.FindGameObjectWithTag ("moon");
         Instance.EnableSun ();
+        Instance.EnableMoon ();
     }
 
     // Update is called once per frame
@@ -53,6 +52,6 @@ public class InputManager : Singleton<InputManager>
 
     private void MoveMoon (float direction)
     {
-
+        moon.transform.Rotate (new Vector3 (0, 0, direction * 1.5f));
     }
 }
