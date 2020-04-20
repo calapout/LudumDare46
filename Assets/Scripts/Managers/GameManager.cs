@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject cometPrefab;
     public GameObject earth;
     public Timer moonChanTimer;
+    public GameObject warningSign;
 
     // Start is called before the first frame update
     void Start ()
@@ -57,14 +58,21 @@ public class GameManager : Singleton<GameManager>
 
     public void InstantiateComet ()
     {
-        float radius = 10;
-        Vector3 postion = Instance.RandomPointOnCircleEdge (radius);
+        float radius = 3;
+        Vector3 positionWarning = Instance.RandomPointOnCircleEdge (radius);
+        Vector3 position = positionWarning * 3.3f;
+
         GameObject comet = Instantiate (cometPrefab);
-        comet.transform.position += postion;
+        comet.transform.position = position;
 
         comet.GetComponent<Rigidbody2D> ().AddForce(new Vector2(-5f, 0f));
         comet.GetComponent<Comet>().setEarth (Instance.earth);
         comet.SetActive (true);
+
+        GameObject warning = Instantiate (Instance.warningSign);
+
+        warning.transform.position = positionWarning;
+        warning.SetActive (true);
 
         float newTime = Mathf.Clamp (initialCometCooldown * 0.95f, Instance.minCometCooldown, initialCometCooldown);
         Instance.cometTimer.SetNewTime (newTime);
@@ -85,7 +93,7 @@ public class GameManager : Singleton<GameManager>
     {
         Instance.InstantiateComet ();
         InputManager.Instance.EnableMoon ();
-        //StartCoroutine ("MoonChanApparition");
+        StartCoroutine ("MoonChanApparition");
     }
 
     public void StartGame ()
@@ -129,7 +137,7 @@ public class GameManager : Singleton<GameManager>
 
     IEnumerator MoonChanApparition ()
     {
-        yield return new WaitForSecondsRealtime (3f);
+        yield return new WaitForSecondsRealtime (6f);
         GameManager.Instance.PauseGame ();
     }
 }
