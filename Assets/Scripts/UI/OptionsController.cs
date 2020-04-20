@@ -16,7 +16,7 @@ public class OptionsController : MonoBehaviour
             musicSource.volume = v / 13f;
         });
         sliderMusic.onValueChanged.AddListener((v) => {
-            SoundManager.soundVolume = v / 10f;
+            SoundManager.soundVolume = v;
         });
     }
 }
