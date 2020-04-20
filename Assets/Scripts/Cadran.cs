@@ -18,9 +18,13 @@ public class Cadran : MonoBehaviour
     public Timer timerSunLeftToReceive;
     private float unhappyTime;
 
-    private void Start ()
+    private void Awake ()
     {
         GameManager.Instance.RegisterCadran ( id, this );
+    }
+
+    private void Start ()
+    {
     }
 
     private void Update ()
@@ -62,6 +66,12 @@ public class Cadran : MonoBehaviour
 
     public void NeedSun ()
     {
+        if ( isSunOver )
+        {
+            EnoughSun ();
+            return;
+        }
+
         didThrowUnhappy = false;
         isNeedingSun = true;
         ThrowEvent (2, isSunOver);

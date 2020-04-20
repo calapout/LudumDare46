@@ -101,7 +101,7 @@ public class GameManager : Singleton<GameManager>
 
     public void Gameover ()
     {
-        SceneManager.LoadScene(0);
+
     }
 
     public void Win()
