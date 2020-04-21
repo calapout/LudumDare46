@@ -4,19 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class InputManager : Singleton<InputManager>
+public class InputManager : MonoBehaviour
 {
+    static public InputManager Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public GameObject sun;
     public GameObject moon;
     delegate void Move (float direction);
 
     private Dictionary<string, Move> functionByAxis { get; set; } = new Dictionary<string, Move> ();
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start ()
     {
         Instance.EnableSun ();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -52,7 +58,7 @@ public class InputManager : Singleton<InputManager>
 
     private void MoveMoon (float direction)
     {
-        moon.transform.Rotate (new Vector3 (0, 0, direction * 1.75f));
+        moon.transform.Rotate (new Vector3 (0, 0, direction * 1.05f));
     }
 
     private void RotatePlanets ()

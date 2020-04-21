@@ -4,6 +4,8 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
+using Bytes;
+
 public class MainMenuController : MonoBehaviour
 {
     public Transform mainMenu;
@@ -42,7 +44,7 @@ public class MainMenuController : MonoBehaviour
         this.pauseMenuHint.SetActive(true);
         Time.timeScale = 1;
 
-        tutos.PlaySunChanAnim();
+        Animate.Delay(2f, tutos.PlaySunChanAnim);
     }
     public void QuitGame() {
         Application.Quit();
