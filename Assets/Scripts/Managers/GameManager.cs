@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 using Bytes;
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : MonoBehaviour
 {
+    static public GameManager Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public float timeToCompleteSunZone = 0.1f;
 
     [SerializeField]
@@ -22,6 +28,9 @@ public class GameManager : Singleton<GameManager>
     public GameObject earth;
     public Timer moonChanTimer;
     public GameObject warningSign;
+
+    public GameObject win;
+    public GameObject lost;
 
     public void RegisterCadran ( int id, Cadran cadran )
     {
@@ -101,12 +110,16 @@ public class GameManager : Singleton<GameManager>
 
     public void Gameover ()
     {
-
+        Time.timeScale = 0;
+        SoundManager.ChangeMusic(1);
+        lost.SetActive(true);
     }
 
     public void Win()
     {
-        SceneManager.LoadScene ("win");
+        Time.timeScale = 0;
+        SoundManager.ChangeMusic(2);
+        win.SetActive(true);
     }
 
     public void PauseGame ()

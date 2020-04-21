@@ -20,7 +20,7 @@ public class Explosion : MonoBehaviour
         Animate.LerpSomething(4f, (f) => {
             if (done) { return; }
             Time.timeScale = 1f - f;
-            if (Time.timeScale <= 0.33f) { done = true; GameManager.Instance.Gameover(); }
+            if (Time.timeScale <= 0.33f) { Time.timeScale = 0; done = true; GameManager.Instance.Gameover(); }
         });
     }
     public void AnimExplosion(Vector3 pos)

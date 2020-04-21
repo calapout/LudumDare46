@@ -14,12 +14,14 @@ public class TutorialsManager : MonoBehaviour
     public void PlaySunChanAnim()
     {
         PauseController.canControl = false;
-        GameManager.Instance.StartGame();
+        
 
-        Animate.Delay(6f, () => {
+        Animate.Delay(0.1f, () => {
             Utils.PlayAnimatorClip(animSunChan, "SunChanTutorial", () => { PauseController.canControl = true; });
             animSun.Play("MoonExclamation", -1, 0);
         });
+
+        Animate.Delay(6.5f, GameManager.Instance.StartGame);
     }
     public void PlayMoonChanAnim()
     {

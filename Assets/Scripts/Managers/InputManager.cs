@@ -4,15 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class InputManager : Singleton<InputManager>
+public class InputManager : MonoBehaviour
 {
+    static public InputManager Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public GameObject sun;
     public GameObject moon;
     delegate void Move (float direction);
 
     private Dictionary<string, Move> functionByAxis { get; set; } = new Dictionary<string, Move> ();
 
-    private void Awake ()
+    private void Start ()
     {
         Instance.EnableSun ();
     }
